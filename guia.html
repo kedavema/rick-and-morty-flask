@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Web - Flask, HTML, Tailwind, RickAndMortyAPI </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-20 pt-0">
+  <h1 class="text-4xl text-center underline text-cyan-900 m-10">Guía - Taller Web</h1>
+  <ol class="list-decimal">
+    <li>Creamos el environment(APP, DEBUG) para el servidor, instalamos las dependencias(requests).</li>
+    <b>Hacemos juntos</b>
+    
+    <li>Creamos una carpeta servidor, con un archivo app.py</li>
+    <b>Hacemos juntos</b>
+
+    <li>INTRO A LIBRERIAS</li>
+    <p>Código externo que realiza funciones de apoyo a nuestro código. Se compone de la palabra reservada import.
+      <br>
+      import x (Importa la librería completa, time, requests).
+    </p>
+    <b>Explicación</b>
+
+    <li>Empezamos a crear la aplicación importando la librería Flask</li>
+    <b>Hacemos juntos</b>
+
+    <li>Creamos la ruta index y enviamos un string(“Hola Mundo”)</li>
+    <b>Tarea: crear una ruta nueva llamada nombre en flask y enviar tu nombre como un string(return "Mi nombre es Kevin")</b>
+
+    <li>Modificamos el index, con render template</li>
+
+    <li>INTRO A HTML</li>
+    <p>
+      HTML
+      Concepto base:
+
+      Las etiquetas HTML son pequeños bloques de código, que indican al navegador como debe interpretar el contenido recogido entre dichas etiquetas. Por ejemplo, si queremos «pintar» un párrafo de texto, hay una etiqueta especifica para que el navegador interprete ese texto como un párrafo.
+
+      Generalmente las etiquetas HTML están compuestas por una etiqueta de apertura, y una etiqueta de cierre. Aunque hay excepciones, como por ejemplo la etiqueta para cargar una imagen que son llamadas etiquetas huérfanas, ya que solo tienen etiqueta de apertura.
+
+      Diferenciación etiquetas y atributos.
+
+      https://carontestudio.com/blog/listado-de-etiquetas-html/
+
+      -Etiquetas fundamentales o raiz html /html -Metadatos head title -Etiquetas de secciones body h1 header footer -Etiquetas de agrupacion de contenido p hr ol ul div -Etiquetas para incrustar contenido img iframe -Etiquetas para crear formularios form input button
+
+      IMAGEN 05
+    </p>
+
+    <li>Creamos un HTML, renderizamos el html con render_template, enviamos como parametro el texto 'Hola Mundo' y lo mostramos dentro del p explicando Template Engine llamado Jinja</li>
+    <b>Tarea: Crear un html llamado nombre.html, renderizarlo con el render_template en la ruta creada anteriormente, y enviar el nombre como parametro 'nombre', mostrarlo dentro de un h1</b>
+
+    <li>INTRO A CSS</li>
+    <!-- <style>
+      .mi_clase {
+        background-color: red;
+        color: white;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+    <div class="mi_clase">
+      <h1>Prueba</h1>
+    </div> -->
+    <li>BORRAR EL CSS</li>
+
+    <li>Explicación TailwindCSS</li>
+    <b>Tarea: instalar juntos el CDN de tailwind</b>
+
+    <li>Creamos la estructura de nuestras tarjetas, debe tener "Imagen"(utilizar la del perrito fachero), "Nombre"</li>
+
+    <li>Explicar que los parametros se pueden pasar como listas, diccionarios</li>
+
+    <b>Tarea 1: Completar la tarjeta añadiendo 'especie' y 'estado' en etiquetas p y una imagen a elección</b>
+    <b>Tarea 2: En flask crear una lista de especies y renderizar en el template(card del perrito) utilizando jinja Ejemplo: lista_creada[0]</b>
+    <b>Tarea 3: En Flask, crear un diccionario con nombre, especie, estado e imagen y renderizar en el template creado</b>
+
+    <li>Buscamos en google una tarjeta hecha en tailwind y reemplazamos nuestras tarjetas y agregamos las clases faltantes de tailwind</li>
+
+    <b>Hacemos juntos</b>
+
+    <li>Borramos lo innecesario y modificamos lo que nos sobra, mantenemos la imagen</li>
+    <b>Hacemos juntos</b>
+
+    <li>INTRO A LAS APIs, JSON, Rick and Morty</li>
+    <p>
+      Application Programming Interface. Se puede definir como un conjunto de protocolos, procedimientos y herramientas que permiten la interacción entre dos aplicaciones.
+
+      Serie de protocolos, procedimientos y herramientas que hacen que dos aplicaciones se comuniquen entre si.
+
+      Las API conectan diferentes partes de una plataforma de software con el fin de garantizar que la información acabe en el lugar adecuado.
+
+      IMAGEN 04
+
+      Usos:
+
+      Compartir información de vuelos entre líneas aéreas y sitios de viajes Usar Google Maps en una aplicación de uso compartido de transporte Crear bots de chat en un servicio de mensajería Integrar vídeos de YouTube en una página web Automatizar flujos de trabajo entre herramientas de software B2B
+
+      Para buscar, recopilar y compartir datos Para reducir el trabajo repetitivo Para fomentar la innovación y la colaboración
+    </p>
+    <b>Explicación</b>
+
+    <li>INTRO A REQUESTS</li>
+    <b>Explicación</b>
+
+    <li>En el servidor utilizamos el metodo get del requests para enviar el json de la api al template</li>
+    <b>Hacemos juntos</b>
+
+    <li>Enviar los personajes a travez de un parametro personajes y mostrar en el html en las tarjetas existentes</li>
+    <b>Tarea: Completar Especie, Status e Imagen</b>
+    
+    <li>Mostrar sintaxis de FOR LOOP con google (buscar: for loop in jinja)</li>
+    <li>Agregamos la tarjeta dentro del for loop</li>
+
+    <li>Mejoramos el diseño utilizando más clases de tailwind</li>
+
+    <li><strong>Explicación POST</strong></li>
+
+    <li>En Flask: creamos la base de datos en app.py con los atributos necesarios</li>
+    <li>Creamos una carpeta llamada database</li>
+    <li>En la terminal, entramos a la carpeta database(cd database) y ejecutamos el comando: <strong>sqlite3 database.db</strong>, luego volvemos a la misma carpeta(cd ..).</li>
+
+    <li>Ahora necesitamos crear la tabla Personaje dentro de la base de datos, para eso abrimos shell de python, escribiendo python3(en sistemas unix) o py(en windows) una vez que se nos abra la shell(deberia aparecer algo como esto '>>>', escribimos: <strong>from app import db</strong></li>, luego ejecutamos: <strong>db.create_all()</strong>
+
+    <li>Salimos de la shell de python escribiendo <b>exit()</b></li>
+
+    <li>Volvemos a ejecutar <b>flask run</b></li>
+    
+    <li>Envolvemos toda la card dentro de un form, y agregamos inputs type hidden de cada dato necesario para enviarlo al backend</li>
+
+    <li>En Flask: creamos un endpoint para recibir los datos del formulario, explicamos el request.form(name del input), agregamos la url al action del formulario</li>
+
+    <li>Creamos el objeto dentro del endpoint, explicamos el redirect y el url for, redireccionamos al index primero luego cambiaremos la redirección a la nueva ruta</li>
+
+    <li><b>Tarea 1(en caso de no haber tiempo solo mostrar):</b> crear un endpoint para renderizar el html con los objetos guardados de la base de datos, enviarlo como un parametro personajes</li>
+
+    <li><b>Tarea 2:</b> renderizar los personajes con un for loop(jinja) utilizando la card ya creada anteriormente</li>
+
+    <li>Si sobra tiempo mostrar como usar navbar copiado de internet</li>
+
+    <h2><strong>FIN :)</strong></h2>
+
+  </ol>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cyan-500">
+  {% include 'navbar.html' %}
+  <h1 class="text-4xl text-center underline text-cyan-900 m-10">Personajes</h1>
+  <div class="grid grid-cols-4 gap-8 text-center p-20 pt-0">
+    {% for personaje in personajes %}
+      <form action="/guardar-personaje" method="post">
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg mx-auto hover:">
+          <img class="w-full" src="{{ personaje['image'] }}" alt="Sunset in the mountains">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ personaje['name'] }}</div>
+            <p class="text-gray-700 text-base">
+              Estado: {{ personaje['status'] }}
+            </p>
+            <p class="text-gray-700 text-base">
+              Especie: {{ personaje['species'] }}
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <button class="inline-block bg-slate-300 hover:bg-green-500 hover:text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Guardar en la Base de Datos</button>
+          </div>
+        </div>
+        <input name="nombre" type="hidden" value="{{ personaje['name'] }}">
+        <input name="estado" type="hidden" value="{{ personaje['status'] }}">
+        <input name="especie" type="hidden" value="{{ personaje['species'] }}">
+        <input name="imagen" type="hidden" value="{{ personaje['image'] }}">
+      </form>
+      {% endfor %}
+  </div>
+</body>
+</html>

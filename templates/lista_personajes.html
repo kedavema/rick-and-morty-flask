@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de personajes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cyan-500">
+  {% include 'navbar.html' %}
+  <h1 class="text-4xl text-center underline text-cyan-900 m-10">Guardados en la base de datos</h1>
+  <div class="grid grid-cols-4 gap-8 text-center p-20 pt-0">
+    {% for personaje in personajes %}
+      <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg mx-auto">
+        <img class="w-full" src="{{ personaje['imagen'] }}">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ personaje['nombre'] }}</div>
+          <p class="text-gray-700 text-base">
+            Estado: {{ personaje['estado'] }}
+          </p>
+          <p class="text-gray-700 text-base">
+            Especie: {{ personaje['especie'] }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
